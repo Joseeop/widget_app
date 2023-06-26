@@ -17,6 +17,7 @@ class MenuItem{
 
 const appMenuItems = <MenuItem>{
 
+//Tenemos que definir estos elementos en el router
   MenuItem(
     title: 'Botones', 
     subTitle: 'Varios botones en Flutter', 
@@ -28,4 +29,10 @@ const appMenuItems = <MenuItem>{
     subTitle: 'Contenedor estilizado', 
     link: '/cards', 
     icon: Icons.credit_card),
+
+    MenuItem(
+    title: 'ProgressIndicator', 
+    subTitle: 'Generales y controlados', 
+    link: '/progress', 
+    icon: Icons.refresh_rounded),
 };
