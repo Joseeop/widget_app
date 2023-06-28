@@ -1,25 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_app/config/menu/menu_items.dart';
+import 'package:widget_app/presentation/providers/theme_provider.dart';
 import 'package:widget_app/presentation/widgets/side_menu.dart';
 
 
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
 
   static const String name = 'home_screen';
 
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
     //Creamos esta key para poder acceder desde otras partes de la apliación a este scaffold
     final scaffoldKey=GlobalKey<ScaffoldState>();
+    final isDarkmode= ref.watch(themeNotifierProvider).isDarkmode;
     return Scaffold(
       //tiene la refeencia del estado actual del Scaffold.
       key:scaffoldKey,
       appBar: AppBar(
          title: const Text('Flutter + Material3'),
+         actions: [
+          IconButton(
+          
+         icon: Icon(isDarkmode? Icons.dark_mode_outlined
+        :Icons.light_mode_outlined),
+        onPressed: (){
+          //!Dentro de un método siempre se usa el READ.
+          ref.read(themeNotifierProvider.notifier).toggleDarkmode();
+          
+        },
+        ),
+         ],
       ),
       body:const _HomeView(),
       drawer:  SideMenu(scaffoldKey: scaffoldKey)
@@ -45,6 +60,7 @@ class _HomeView extends StatelessWidget {
       });
   }
 }
+
 
 class _CustomListTile extends StatelessWidget {
   const _CustomListTile({
@@ -81,3 +97,5 @@ class _CustomListTile extends StatelessWidget {
     );
   }
 }
+
+
