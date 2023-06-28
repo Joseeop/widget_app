@@ -15,9 +15,15 @@ class MenuItem{
    required  this.icon});
 }
 
-const appMenuItems = <MenuItem>{
+const appMenuItems = <MenuItem>[
 
 //Tenemos que definir estos elementos en el router
+
+MenuItem(
+    title: 'Counter Screen', 
+    subTitle: 'Contador de prueba para implementar Riverpod', 
+    link: '/counter', 
+    icon: Icons.list_alt_rounded),
   MenuItem(
     title: 'Botones', 
     subTitle: 'Varios botones en Flutter', 
@@ -66,5 +72,11 @@ const appMenuItems = <MenuItem>{
     link: '/infinite', 
     icon: Icons.list_alt_rounded),
 
+ MenuItem(
+    title: 'Theme changer', 
+    subTitle: 'Cambiar tema de la App de forma dinámica', 
+    link: '/theme_changer_screen', 
+    icon: Icons.color_lens_outlined),
+     
 
-};
+];
