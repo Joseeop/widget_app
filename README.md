@@ -1,37 +1,42 @@
-# widget_app
 
-A new Flutter project.
 
 # widget_app
 
 A new Flutter project.
 
-Se usa:
+Gestores de estado:
 
--RefreshIndicator
+    -Provider
+    -Gestor de estado Riverpod
 
--InfiniteScroll
-
--ProgresIndicators
-
--Lineales
-
--Circulares
-
--Controlados
-
--Animaciones
-
--Snackbars
-
--Diálogos
-
--Licencias
-
--Switches, Checkboxes, Radios
-
--Tiles
-
--Listas
-
--Pageviews
+    Se usa:
+    
+    -RefreshIndicator
+    
+    -InfiniteScroll
+    
+    -ProgresIndicators
+    
+    -Lineales
+    
+    -Circulares
+    
+    -Controlados
+    
+    -Animaciones
+    
+    -Snackbars
+    
+    -Diálogos
+    
+    -Licencias
+    
+    -Switches, Checkboxes, Radios
+    
+    -Tiles
+    
+    -Listas
+    
+    -Pageviews
+    
+    
